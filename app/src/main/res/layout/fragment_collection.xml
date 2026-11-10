@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true"
+    android:paddingBottom="80dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Data Collection"
+            android:textColor="@color/on_surface"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif"
+            android:text="Session Configuration &amp; Local Persistence Engine"
+            android:textColor="@color/on_surface_variant"
+            android:textSize="12sp" />
+
+        <!-- New Session Form Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="1dp"
+            app:strokeColor="@color/card_stroke"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-bold"
+                    android:text="Session Settings"
+                    android:textColor="@color/on_surface"
+                    android:textSize="16sp" />
+
+                <!-- Session Name Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilSessionName"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Session Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSessionName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Session_001" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Aggregation Interval Input -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilInterval"
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:hint="Sampling Window (seconds)">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etInterval"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text="5" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Signal source toggles -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Active Signal Sources"
+                    android:textColor="@color/on_surface"
+                    android:textSize="13sp" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbCollectSensors"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Smartphone Sensors (IMU, Mag, Baro, Light)" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbCollectCellular"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Cellular Telemetry (Signal bars, RSRP, CID)" />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:id="@+id/cbCollectWifi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Wi-Fi Beacon Scans (SSID, BSSID, RSSI)" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCreateSession"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Initialize Session"
+                    app:cornerRadius="14dp"
+                    app:icon="@drawable/ic_add" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Quick actions to History & Export -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGoHistory"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:text="Past Sessions"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_history" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGoExport"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:text="Export Data"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_export" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

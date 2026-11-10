@@ -1,0 +1,6 @@
+{
+  "name": "SignalSense",
+  "description": "Multi-signal monitoring application collecting real-time measurements from smartphone sensors, cellular networks, and Wi-Fi access points.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

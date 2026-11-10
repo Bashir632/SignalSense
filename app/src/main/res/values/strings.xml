@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">SignalSense</string>
+    <string name="app_tagline">Multi-Signal Telemetry &amp; Monitoring</string>
+    <string name="app_version">Version 1.0.0 (Phase 1)</string>
+
+    <!-- Navigation Titles -->
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_sensors">Sensors</string>
+    <string name="title_cellular">Cellular</string>
+    <string name="title_wifi">Wi-Fi</string>
+    <string name="title_collection">Collection</string>
+    <string name="title_history">Session History</string>
+    <string name="title_visualization">Visualization</string>
+    <string name="title_export">Data Export</string>
+    <string name="title_device_info">Device Info</string>
+    <string name="title_permissions">Permissions</string>
+    <string name="title_settings">Settings</string>
+    <string name="title_about">About SignalSense</string>
+    <string name="title_onboarding">Welcome to SignalSense</string>
+
+    <!-- Dashboard Status & Metrics -->
+    <string name="dashboard_subtitle">Real-time smartphone telemetry &amp; radio signals</string>
+    <string name="stat_total_sensors">Total Sensors</string>
+    <string name="stat_active_sensors">Active Sensors</string>
+    <string name="stat_cellular_status">Cellular Network</string>
+    <string name="stat_wifi_status">Wi-Fi Network</string>
+    <string name="stat_collection_state">Collection State</string>
+    <string name="stat_collected_records">Total Records</string>
+    <string name="stat_session_duration">Session Duration</string>
+    <string name="stat_db_storage">Database Storage</string>
+
+    <!-- Status Values -->
+    <string name="status_idle">IDLE</string>
+    <string name="status_monitoring">MONITORING</string>
+    <string name="status_paused">PAUSED</string>
+    <string name="status_stopped">STOPPED</string>
+    <string name="status_connected">Connected</string>
+    <string name="status_disconnected">Disconnected</string>
+    <string name="status_detecting">Detecting...</string>
+    <string name="status_initial_duration">00:00:00</string>
+    <string name="status_zero_records">0 records</string>
+    <string name="status_initial_storage">0.0 MB / SQLite</string>
+
+    <!-- Controls & Action Buttons -->
+    <string name="action_start_monitoring">Start Monitoring</string>
+    <string name="action_stop_monitoring">Stop Monitoring</string>
+    <string name="action_pause_monitoring">Pause</string>
+    <string name="action_resume_monitoring">Resume</string>
+    <string name="action_new_session">New Session</string>
+    <string name="action_view_history">View History</string>
+    <string name="action_export_dataset">Export Dataset</string>
+    <string name="action_view_all_sensors">All Sensors</string>
+    <string name="action_quick_inspect">Quick Inspect</string>
+    <string name="action_get_started">Get Started</string>
+    <string name="action_skip">Skip</string>
+    <string name="action_grant_permissions">Grant Permissions</string>
+    <string name="action_refresh">Refresh</string>
+
+    <!-- Section Headers -->
+    <string name="section_quick_actions">Quick Controls</string>
+    <string name="section_signal_overview">Live Signal Overview</string>
+    <string name="section_system_status">System Telemetry</string>
+    <string name="section_all_modules">SignalSense Modules</string>
+
+    <!-- Module descriptions -->
+    <string name="desc_sensors_module">Hardware sensors: Accelerometer, Gyroscope, Magnetometer, Barometer, Light &amp; Proximity.</string>
+    <string name="desc_cellular_module">Active SIM, MCC/MNC, Cell ID, network type, RSSI, RSRP, RSRQ, SINR measurements.</string>
+    <string name="desc_wifi_module">Connected SSID, BSSID, RSSI dBm, frequency channels, and nearby access points.</string>
+    <string name="desc_collection_module">Configure aggregation windows, session naming, recording, and storage parameters.</string>
+    <string name="desc_history_module">Inspect saved local sessions, record counts, timelines, and stored metrics.</string>
+    <string name="desc_visualization_module">Real-time and historical multi-axis charts, statistical mean, std dev, min/max.</string>
+    <string name="desc_export_module">Export sensor, cellular, Wi-Fi, and combined datasets in standard CSV and JSON.</string>
+    <string name="desc_device_info_module">Hardware architecture, Android OS version, battery status, and sensor specs.</string>
+    <string name="desc_permissions_module">Audit and manage runtime permissions required for sensor &amp; signal telemetry.</string>
+    <string name="desc_settings_module">Sampling intervals, display preferences, theme selection, and laptop backend sync.</string>
+    <string name="desc_about_module">SignalSense architecture, hardware specifications, and system information.</string>
+
+    <!-- About & Disclaimer -->
+    <string name="about_body">SignalSense is a professional smartphone-based multi-signal monitoring and local data collection application designed for precision hardware sensor, cellular network, and Wi-Fi access point measurements.\n\nStrictly deterministic telemetry without artificial intelligence or machine learning frameworks.</string>
+    <string name="about_developer">Engineered with Kotlin, Material Design 3, Room SQLite, SensorManager, TelephonyManager &amp; WifiManager.</string>
+</resources>

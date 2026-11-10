@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand / Primary Colors (Dark) -->
+    <color name="primary">#38BDF8</color>
+    <color name="on_primary">#082F49</color>
+    <color name="primary_container">#0C4A6E</color>
+    <color name="on_primary_container">#E0F2FE</color>
+
+    <!-- Secondary -->
+    <color name="secondary">#7DD3FC</color>
+    <color name="on_secondary">#082F49</color>
+    <color name="secondary_container">#075985</color>
+    <color name="on_secondary_container">#BAE6FD</color>
+
+    <!-- Tertiary -->
+    <color name="tertiary">#34D399</color>
+    <color name="on_tertiary">#064E3B</color>
+    <color name="tertiary_container">#065F46</color>
+    <color name="on_tertiary_container">#D1FAE5</color>
+
+    <!-- Status Colors -->
+    <color name="status_active">#34D399</color>
+    <color name="status_paused">#FBBF24</color>
+    <color name="status_stopped">#F87171</color>
+    <color name="status_idle">#94A3B8</color>
+
+    <!-- Neutral & Backgrounds (Dark OLED / Cyber Slate) -->
+    <color name="background">#0B0F19</color>
+    <color name="on_background">#F8FAFC</color>
+    <color name="surface">#111827</color>
+    <color name="on_surface">#F8FAFC</color>
+    <color name="surface_variant">#1E293B</color>
+    <color name="on_surface_variant">#94A3B8</color>
+    <color name="outline">#334155</color>
+    <color name="outline_variant">#1E293B</color>
+
+    <!-- Sensor / Radio Signal Accents (Vibrant in Dark Mode) -->
+    <color name="sensor_accent">#A78BFA</color>
+    <color name="cellular_accent">#22D3EE</color>
+    <color name="wifi_accent">#60A5FA</color>
+    <color name="collection_accent">#34D399</color>
+
+    <!-- Card Backgrounds -->
+    <color name="card_background">#151C2C</color>
+    <color name="card_stroke">#26334D</color>
+
+    <!-- Base -->
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+</resources>

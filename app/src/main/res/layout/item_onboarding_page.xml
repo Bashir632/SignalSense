@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <ImageView
+        android:id="@+id/ivPageIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_sensors" />
+
+    <TextView
+        android:id="@+id/tvPageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Built-in Sensors"
+        android:textColor="@color/on_background"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tvPageDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:lineSpacingExtra="4dp"
+        android:text="Measure real-time 3-axis acceleration, angular velocity, magnetic field, pressure, and ambient light directly from hardware."
+        android:textColor="@color/on_surface_variant"
+        android:textSize="15sp" />
+
+</LinearLayout>

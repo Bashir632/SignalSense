@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarVisualization"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/surface"
+            app:navigationIcon="@drawable/ic_chevron_right"
+            app:title="@string/title_visualization" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Signal Selector Chips -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="sans-serif-bold"
+                android:text="Select Telemetry Stream"
+                android:textColor="@color/on_surface"
+                android:textSize="14sp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupSignals"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAccel"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Accelerometer" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipGyro"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gyroscope" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipMag"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Magnetometer" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipCellular"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cellular RSRP" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipWifi"
+                    style="@style/Widget.Material3.Chip.Filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wi-Fi RSSI" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- Chart Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvChartTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-bold"
+                        android:text="Live Signal Waveform"
+                        android:textColor="@color/on_surface"
+                        android:textSize="16sp" />
+
+                    <!-- MPAndroidChart LineChart -->
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/lineChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="260dp"
+                        android:layout_marginTop="12dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Statistical Calculations Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/card_background"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="1dp"
+                app:strokeColor="@color/card_stroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-bold"
+                        android:text="Mathematical Statistics"
+                        android:textColor="@color/on_surface"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="Deterministic numerical aggregation over current window"
+                        android:textColor="@color/on_surface_variant"
+                        android:textSize="11sp" />
+
+                    <GridLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:columnCount="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_marginEnd="6dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/bg_badge_idle"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:fontFamily="sans-serif"
+                                android:text="Mean (μ)"
+                                android:textColor="@color/on_surface_variant"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/tvStatMean"
+                                android:fontFamily="monospace"
+                                android:text="9.806 m/s²"
+                                android:textColor="@color/primary"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_marginStart="6dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/bg_badge_idle"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:fontFamily="sans-serif"
+                                android:text="Std Dev (σ)"
+                                android:textColor="@color/on_surface_variant"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/tvStatStdDev"
+                                android:fontFamily="monospace"
+                                android:text="0.042"
+                                android:textColor="@color/primary"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_marginEnd="6dp"
+                            android:background="@drawable/bg_badge_idle"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:fontFamily="sans-serif"
+                                android:text="Min / Max"
+                                android:textColor="@color/on_surface_variant"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/tvStatMinMax"
+                                android:fontFamily="monospace"
+                                android:text="9.72 / 9.89"
+                                android:textColor="@color/primary"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_columnWeight="1"
+                            android:layout_marginStart="6dp"
+                            android:background="@drawable/bg_badge_idle"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:fontFamily="sans-serif"
+                                android:text="Signal Change Rate (Δ)"
+                                android:textColor="@color/on_surface_variant"
+                                android:textSize="11sp" />
+                            <TextView
+                                android:id="@+id/tvStatChangeRate"
+                                android:fontFamily="monospace"
+                                android:text="0.015 /sec"
+                                android:textColor="@color/primary"
+                                android:textSize="14sp" />
+                        </LinearLayout>
+
+                    </GridLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
